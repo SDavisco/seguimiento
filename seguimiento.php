@@ -1,4 +1,5 @@
 <?php
+@session_start(); 
 	require ('conexion.php');
 	//llamar para lista de clientes
 	$query = "SELECT * FROM CLIENTES ORDER BY cli_id ASC";
@@ -27,6 +28,12 @@
 				</option>
             				<?php }?>
 			</select>
+	    <div class="campo">
+	        <label>
+	            Usuario
+	        </label>
+	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>">
+	    </div>
         </div>
         <div id="GetDatosCliente">
             <div class="campo">
@@ -56,26 +63,28 @@
 				Fecha
 			</label>
 			<input type="date" name="inc_fecha" id="date">
-		</div>				
+		</div>
+		<select name="type_sg" id="type_sg">
+				<option value="0">seleccionar seguimiento</option>
 		<div class="campo">
 			<label>
 			Proceso Realizado
 			</label>
-		<textarea name="proceso" id="roceso" cols="25" rows="10" class="caja-2" placeholder="Deja tu mensaje">				
+		<textarea name="proceso" id="proceso" cols="25" rows="10" class="caja-2" placeholder="Deja tu mensaje">				
 		</textarea>
 		</div>			
 		<div class="campo">
-			<label>
-				Observacion Cliente
-			</label>
-		A
-		</div>		
+				<label>
+					Observacion Cliente
+				</label>
+				<input type="text" name="cliente_obs" id="cliente_obs">
+		</div>
 		<div class="campo">
 				<label>
 					Observacion Vendedor
 				</label>
 				<input type="text" name="vendedor_obs" id="vendedor_obs">
-			</div>
+		</div>
 		<input type="submit" name="submit" value="aceptar">
 	</form>
 	</body>
