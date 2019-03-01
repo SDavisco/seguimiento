@@ -2,8 +2,12 @@
 @session_start(); 
 	require ('conexion.php');
 	//llamar para lista de clientes
-	$query = "SELECT * FROM CLIENTES ORDER BY cli_id ASC";
-	$resultado = $conn->query($query);
+	$query      = "SELECT * FROM CLIENTES ORDER BY cli_id ASC";
+	$query1     = "SELECT canal_seguimiento FROM CANAL_SEGUIMIENTO";
+	$query2     = "SELECT proceso FROM PROCESO_SEGUIMIENTO";
+	$resultado  = $conn->query($query);
+	$resultado1 = $conn->query($query1);
+	$resultado2 = $conn->query($query2);
 
 ?>
 <!DOCTYPE html><!-- HTML5 -->
@@ -23,18 +27,18 @@
 			</label>
 			<select name="cliente" id="cliente" onchange="funcion()">
 				<option value="0">seleccionar cliente</option>
-				<?php WHILE($row=$resultado->fetch_assoc()){?>
+				<?php WHILE($row = $resultado->fetch_assoc()){?>
 				<option value="<?php echo $row['cli_nomb'];?>"><?php echo $row['cli_nomb'];?>
 				</option>
-            				<?php }?>
+            	<?php }?>
 			</select>
+		</div>
 	    <div class="campo">
 	        <label>
 	            Usuario
 	        </label>
 	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>">
 	    </div>
-        </div>
         <div id="GetDatosCliente">
             <div class="campo">
     			<label>
@@ -54,36 +58,41 @@
     		   </label>
     		   <input type="text" name="cli_type" id="cli_type">
     		</div>  
-        </div>
-	
-		</div>
-        
+        </div>       
 		<div class="campo">
 			<label>
-				Fecha
+				Fecha de Correo
 			</label>
 			<input type="date" name="inc_fecha" id="date">
 		</div>
-		<select name="type_sg" id="type_sg">
+		<div class="campo">
+			<label>
+				Canal de Seguimiento
+			</label>
+			<select name="type_sg" id="type_sg">
 				<option value="0">seleccionar seguimiento</option>
+					<?php WHILE($row1 = $resultado1->fetch_assoc()){?>
+				<option value="<?php echo $row1['canal_seguimiento'];?>"><?php echo $row1['canal_seguimiento'];?>
+				</option>
+            	<?php }?>
+			</select>
 		<div class="campo">
 			<label>
 			Proceso Realizado
 			</label>
-		<textarea name="proceso" id="proceso" cols="25" rows="10" class="caja-2" placeholder="Deja tu mensaje">				
-		</textarea>
+			<select name="proceso" id="proceso" id="proceso">
+				<option value="0">seleccionar proceso</option>
+					<?php WHILE($row2 = $resultado2->fetch_assoc()){?>
+				<option value="<?php echo $row2['proceso'];?>">	<?php echo $row2['proceso'];?>	
+				</option>
+				<?php }?>
+			</select>		
 		</div>			
 		<div class="campo">
 				<label>
-					Observacion Cliente
+					Observacion General
 				</label>
-				<input type="text" name="cliente_obs" id="cliente_obs">
-		</div>
-		<div class="campo">
-				<label>
-					Observacion Vendedor
-				</label>
-				<input type="text" name="vendedor_obs" id="vendedor_obs">
+				<input type="text" name="obs" id="obs">
 		</div>
 		<input type="submit" name="submit" value="aceptar">
 	</form>
