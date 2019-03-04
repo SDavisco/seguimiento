@@ -17,10 +17,11 @@
 		<meta charset="utf-8"/>
 		<script language="javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script language="javascript" src="js/includes.js"></script>
+		<link rel="stylesheet" href="css/main.css"  type="text/css">
 		
 	</head>
 	<body>
-	<form class="" action="validar.php" method="POST">
+	<form class="" action="validar.php" method="POST" id="formulario">
 		<div class="campo">
 			<label>
 				Empresa-Cliente
@@ -33,12 +34,6 @@
             	<?php }?>
 			</select>
 		</div>
-	    <div class="campo">
-	        <label>
-	            Usuario
-	        </label>
-	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>">
-	    </div>
         <div id="GetDatosCliente">
             <div class="campo">
     			<label>
@@ -58,7 +53,7 @@
     		   </label>
     		   <input type="text" name="cli_type" id="cli_type">
     		</div>  
-        </div>       
+		</div>       
 		<div class="campo">
 			<label>
 				Fecha de Correo
@@ -76,6 +71,13 @@
 				</option>
             	<?php }?>
 			</select>
+		</div>
+					<div class="campo">
+	        <label>
+	            Usuario
+	        </label>
+	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>">
+	    </div>
 		<div class="campo">
 			<label>
 			Proceso Realizado

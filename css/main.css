@@ -1,0 +1,35 @@
+:root{
+    --primario: #ee1d00;
+    --secundario: #e3e3e3;
+}
+
+html{
+    box-sizing: border-box;
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+    position: absolute;
+    left: 25%;
+}
+.campo {
+   margin:25px ;
+   display: flex;
+   width: 50%;
+}
+
+.campo label {
+    margin-right: 25px;
+}
+#cliente, #proceso, #type_sg {
+    width: 100%;
+}
+
+.campo input {
+    width: 150px;;
+}
