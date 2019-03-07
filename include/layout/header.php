@@ -14,7 +14,7 @@
 			<span class="item" style="float:right"><?php echo $_SESSION["user_name"]; ?></span>
 			<ul>
                 <li><a href="seguimiento.php">seguimiento</a></li>
-                <li><a href="mantenimiento.php">mantenimiento</a></li>
+                <li><a href="clientes.php">clientes</a></li>
                 <li><a href="getdatos.php">reporte</a></li>
 			</ul>
 </div>

@@ -11,7 +11,7 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 	$resultado2 = $conn->query($query2);
 
 ?>
-<!DOCTYPE html><!-- HTML5 -->
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>SEGUIMIENTO  - Davisco Seguimiento </title>
@@ -22,7 +22,7 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 		
 	</head>
 	<body>
-	<form class="" action="validar.php" method="POST" id="formulario">
+	<form action="validar.php" method="POST" id="formulario">
 		<div class="campo">
 			<label>
 				Empresa-Cliente
