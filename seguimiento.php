@@ -18,11 +18,12 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 		<meta charset="utf-8"/>
 		<script language="javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script language="javascript" src="js/includes.js"></script>
+		<script language="javascript" src="js/CleanForm.js"></script>
 		<link rel="stylesheet" href="css/main.css"  type="text/css">
 		
 	</head>
 	<body>
-	<form action="validar.php" method="POST" id="formulario">
+	<form name="form" action="validar.php" method="POST" id="formulario">
 		<div class="campo">
 			<label>
 				Empresa-Cliente
@@ -97,7 +98,7 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 				</label>
 				<input type="text" name="obs" id="obs">
 		</div>
-		<input type="submit" name="submit" value="aceptar">
+		<input type="submit" name="submit" value="aceptar" id="reset">
 	</form>
 	</body>
 </html>

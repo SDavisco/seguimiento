@@ -9,6 +9,7 @@
     $inc_obs_c=$_POST['cliente_obs'];
     $inc_obs_v=$_POST['vendedor_obs'];
     $emp_nomb= "DAVISCO S.A";
+    var_dump($_POST);
 	$sql="INSERT INTO INCIDENCIAS (user_name, cli_nomb, cli_cont, cli_mail, cli_type, emp_nomb,  inc_fecha, inc_proc, inc_obs_c, inc_obs_v) VALUES ('$user_name', '$cli_nomb', '$cli_cont', '$cli_mail','$cli_type', '$emp_nomb','$inc_fecha','$inc_proc', '$inc_obs_c', '$inc_obs_v')"; 
 if (mysqli_query($conn, $sql))
 {
