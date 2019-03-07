@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +15,7 @@
 			<ul>
                 <li><a href="seguimiento.php">seguimiento</a></li>
                 <li><a href="mantenimiento.php">mantenimiento</a></li>
+                <li><a href="getdatos.php">reporte</a></li>
 			</ul>
 </div>
 </body>

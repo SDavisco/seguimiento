@@ -5,12 +5,19 @@
 
 html{
     box-sizing: border-box;
+    font-family: "Arial";
 
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
+#nav li {
+    padding: 15px 25px 50px;
+    display:inline-block;
+}
+
 form {
     padding: 3rem;
     margin-top: 2rem;

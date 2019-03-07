@@ -1,5 +1,6 @@
 <?php
-@session_start(); 
+@session_start();
+if(!isset($_SESSION["user_name"])) header("Location: login.php");
 	require ('conexion.php');
 	//llamar para lista de clientes
 	$query      = "SELECT * FROM CLIENTES ORDER BY cli_id ASC";
@@ -76,7 +77,7 @@
 	        <label>
 	            Usuario
 	        </label>
-	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>">
+	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>" readonly="readonly">
 	    </div>
 		<div class="campo">
 			<label>

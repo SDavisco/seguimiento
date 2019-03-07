@@ -1,7 +1,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a href="csv_data.php" class="btn btn-success pull-right">Exportar Reporte</a>
+            <button><a href="csv_data.php"></a>Reportes</button>
         </div>
         <div class="panel-body">
             <table class="table table-bordered">
@@ -26,9 +26,9 @@
                     include ('conexion.php');
                     
                     //get records from database
-                    $q_reporte = "SELECT * FROM INCIDENCIAS ORDER BY inc_num ASC";
-                    $reporte = mysqli_query($conn, $q_reporte);
-                    $row = mysqli_fetch_assoc($reporte);?>         
+                    $query = "SELECT * FROM INCIDENCIAS ORDER BY inc_num ASC";
+                    $reporte = $conn->query($query);
+                    WHILE ($row =  $reporte ->fetch_array(MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row['inc_num']; ?></td>
                         <td><?php echo $row['user_name']; ?></td>
@@ -42,6 +42,7 @@
                         <td><?php echo $row['inc_obs_c']; ?></td>
                         <td><?php echo $row['inc_obs_v']; ?></td>                                                              
                     </tr>
+                    <?php }?>
                 </tbody>
             </table>
         </div>

@@ -13,7 +13,8 @@
 				@session_start();
 				$_SESSION["user_name"]=$row["user_name"];
 				$_SESSION["user_cod"]=$row["user_cod"];
-				header("Location: perfil.php");
+				$_SESSION["user_type"]=$row["user_type"];
+				header("Location: index.php");
 			}
 
 		}else{
