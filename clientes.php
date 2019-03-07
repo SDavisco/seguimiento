@@ -5,14 +5,17 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
     $query = "SELECT type_nombre FROM TIPO_CLIENTE";
     $cli_type = $conn->query($query);
 ?>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Maestro de Clientes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <meta charset="utf-8">
+</head>
+<body>
+<?php include 'include/layout/header.php';?>
+    
     <form>
     </form action="vcliente" method="POST" id="formulario">
     <div class="campo">
@@ -37,10 +40,14 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
     </div>
     <div class="campo">
         <label>Tipo de Cliente</label>
-        <?php WHILE($row = $cli_type->fetch_assoc()){?>
-		<option value="<?php echo $row['type_nombre'];?>"><?php echo $row['type_nombre'];?>
-</head>
-<body>
-    
+        <select name="cli_type">
+            <option value="0">tipo de cliente</option>
+            <?php WHILE($row = $cli_type->fetch_assoc()){?>
+		    <option value="<?php echo $row['type_nombre'];?>"><?php echo $row['type_nombre'];?>
+            </option>
+            <?php }?>
+        </select>
+    </div>
+    <input type="submit" name="submit" value="Registrar">
 </body>
 </html>
