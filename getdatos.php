@@ -1,4 +1,22 @@
-<div class="container">
+<?php
+@session_start();
+	if(!isset($_SESSION["user_name"])) header("Location: login.php");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SEGUIMIENTO  - Davisco Seguimiento </title>
+	<meta charset="utf-8"/>
+	<script language="javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script language="javascript" src="js/includes.js"></script>
+	<script language="javascript" src="js/CleanForm.js"></script>
+	<link rel="stylesheet" href="css/main.css"  type="text/css">	
+</head>
+<body>
+<?php
+    include 'include/layout/header.php';
+?>
+    <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
             <button><a href="csv_data.php"></a>Reportes</button>
@@ -42,9 +60,11 @@
                         <td><?php echo $row['inc_obs_c']; ?></td>
                         <td><?php echo $row['inc_obs_v']; ?></td>                                                              
                     </tr>
-                    <?php }?>
-                </tbody>
-            </table>
+                        <?php }?>
+                    </tbody>
+                    </table>
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>

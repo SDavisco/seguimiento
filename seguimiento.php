@@ -23,6 +23,9 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 		
 	</head>
 	<body>
+	<?php
+    include 'include/layout/header.php';
+?>
 	<form name="form" action="validar.php" method="POST" id="formulario">
 		<div class="campo">
 			<label>

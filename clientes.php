@@ -17,10 +17,10 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 <?php include 'include/layout/header.php';?>
     
     <form>
-    </form action="vcliente" method="POST" id="formulario">
+    </form action="vcliente.php" method="POST" id="formulario">
     <div class="campo">
         <label>RUC</label>
-        <input type="number" name="ruc">
+        <input type="number" name="cli_ruc">
     </div>
     <div class="campo">
         <label>Nombre</label>
