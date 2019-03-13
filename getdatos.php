@@ -34,8 +34,7 @@
                     <th>Empresa</th>
                     <th>Fecha</th>
                     <th>Proceso</th>
-                    <th>Observacion Cliente</th>
-                    <th>Observacion Vendedor</th>
+                    <th>Observacion General</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,8 +56,7 @@
                         <td><?php echo $row['emp_nomb']; ?></td>
                         <td><?php echo $row['inc_fecha']; ?></td>
                         <td><?php echo $row['inc_proc']; ?></td>
-                        <td><?php echo $row['inc_obs_c']; ?></td>
-                        <td><?php echo $row['inc_obs_v']; ?></td>                                                              
+                        <td><?php echo $row['obs_general']; ?></td>                                                             
                     </tr>
                         <?php }?>
                     </tbody>

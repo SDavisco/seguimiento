@@ -16,11 +16,11 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 <body>
 <?php include 'include/layout/header.php';?>
     
-    <form>
-    </form action="vcliente.php" method="POST" id="formulario">
+    
+    <form name="form" action="vcliente.php" method="POST" id="formulario">
     <div class="campo">
         <label>RUC</label>
-        <input type="number" name="cli_ruc">
+        <input type="text" name="cli_ruc">
     </div>
     <div class="campo">
         <label>Nombre</label>
@@ -32,7 +32,7 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
     </div>
     <div class="campo">
         <label>Telefono</label>
-        <input type="number" name="cli_phone">
+        <input type="text" name="cli_phone">
     </div>
     <div class="campo">
         <label>Correo Electronico</label>
@@ -49,5 +49,6 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
         </select>
     </div>
     <input type="submit" name="submit" value="Registrar">
+    </form>
 </body>
 </html>
