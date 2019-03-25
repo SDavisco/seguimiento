@@ -81,7 +81,7 @@ if(!isset($_SESSION["user_name"])) header("Location: login.php");
 	        <label>
 	            Usuario
 	        </label>
-	        <input type="text" name="user" id ="user" value="<?php echo $_SESSION["user_name"];?>" readonly="readonly">
+	        <input type="text" name="vendedor" id ="user" value="<?php echo $_SESSION["user_name"];?>" readonly="readonly">
 	    </div>
 		<div class="campo">
 			<label>

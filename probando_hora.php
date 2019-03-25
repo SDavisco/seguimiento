@@ -12,9 +12,7 @@
     ?>
     <h1>Fecha y Hora actual</h1>
      
-    <? $hoy = date('m/d/y g:ia');
-    echo '$hoy' ;
-    ?>
+    <?= date('m/d/y g:ia');    ?>
     
     </body>
     </html>

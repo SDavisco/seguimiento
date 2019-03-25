@@ -5,7 +5,7 @@ include 'conexion.php';
 //get records from database
 $reporte = $conn->query("SELECT * FROM INCIDENCIAS ORDER BY inc_num ASC");
 
-if($query->num_rows > 0){
+if($reporte->num_rows > 0){
     $delimiter = ",";
     $filename = "members_" . date('Y-m-d') . ".csv";
     
@@ -13,12 +13,12 @@ if($query->num_rows > 0){
     $f = fopen('php://memory', 'w');
     
     //set column headers
-    $fields = array('Numero de incidencia', 'Vendedor', 'Cliente', 'Contacto', 'E-mail', 'Tipo de Cliente','Empresa','Fecha','Proceso','Observacion Cliente','Observacion Vendedor' );
+    $fields = array('Numero de incidencia', 'Vendedor', 'Cliente', 'Contacto', 'E-mail', 'Tipo de Cliente','Empresa','Fecha de Correo', 'Fecha inicidencia', 'Canal de seguimiento','Proceso','Observacion General' );
     fputcsv($f, $fields, $delimiter);
     
     //output each row of the data, format line as csv and write to file pointer
     while($row = $reporte->fetch_assoc()){
-        $lineData = array($row['inc_num'],  $row['user_name'], $row['cli_nomb'], $row['cli_cont'], $row['cli_mail'], $row['cli_type'],$row['emp_nomb'],$row['inc_fecha'], $row['inc_proc'], $row['inc_obs_c'], $row['inc_obs_v']);
+        $lineData = array($row['inc_num'], $row['vendedor'], $row['cli_nomb'], $row['cli_cont'], $row['cli_mail'], $row['cli_type'],$row['emp_nomb'],$row['correo_fecha'], $row['incidencia_fecha'], $row['canal_seguimiento'], $row['inc_proc'], $row['obs_general']);
         fputcsv($f, $lineData, $delimiter);
     }
     
